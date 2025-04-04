@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: red;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: 600px;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: 2px;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: #caffca;
+    width: 100%;
+    text-align: center;
+}
+
+/* Исправленный блок ввода */
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: nowrap;
+}
+
+.input-item {
+    flex: 1;
+    min-width: 0; /*предотвращает переполнение */
+}
+
+/* Фиксированная ширина для select */
+.input-item:nth-child(2) {
+    flex: 0 0 60px;
+}
+
+input, select {
+    font-size: 1.2em;
+    padding: 8px 10px;
+    border: 2px dashed red;
+    border-radius: 10px;
+    background-color: #caffca;
+    color: red;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+select {
+    padding-right: 8px;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.button-item {
+    width: 100%;
+    max-width: 200px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #caffca;
+    font-size: 1.2em;
+    padding: 10px;
+    border: 2px dashed red;
+    color: red;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: #ffeeee;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Блок результатов с историей */
+.result-box {
+    border: 2px dashed red;
+    padding: 15px;
+    background-color: #caffca;
+    font-size: 1.1em;
+    color: red;
+    text-align: left;
+    width: 100%;
+    border-radius: 10px;
+    min-height: 120px;
+}
+
+.history-item {
+    opacity: 0.6;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.current-result {
+    font-weight: bold;
+    margin-top: 8px;
+    font-size: 1.1em;
+}
+
+/* Адаптивность */
+@media (max-width: 500px) {
+    .input-group {
+        flex-wrap: wrap;
+    }
+    
+    .input-item {
+        flex: 1 1 100%;
+    }
+    
+    .input-item:nth-child(2) {
+        flex: 0 0 50px;
+        order: 1;
+    }
+    
+    .calculator {
+        padding: 20px 15px;
+    }
+    
+    input, select {
+        font-size: 1.1em;
+        padding: 8px;
+    }
+}
